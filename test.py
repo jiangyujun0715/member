@@ -1,4 +1,15 @@
-def test(a,b):
-    return a+b
+from flask import Flask
 
-print(test(3,5))
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World'
+
+@app.route('/getName')
+def getName():
+    return 'name'
+    
+
+if __name__ == '__main__':
+    app.run()
